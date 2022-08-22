@@ -1,0 +1,13 @@
+name = "JuliaGraphsAlgorithms"
+uuid = "622ce888-374a-4ab0-80cf-06934e81c84e"
+authors = ["mromrom <moiromrom@alum.us.es> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
