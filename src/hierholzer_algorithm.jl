@@ -1,4 +1,4 @@
-function hierholzer_algorithm(grafo_inicial)
+function hierholzer_algorithm(g)
     curr_path = Any[]
     circuit = Any[]
     actual_vertex = 1
