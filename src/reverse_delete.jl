@@ -9,7 +9,7 @@ function reverse_delete_algorithm(initial_graph)
         dst = edges_initial_graph[i].dst
         w = edges_initial_graph[i].weight
         rem_edge!(digraph,src,dst)
-        if (!SimpleGraphs.is_connected(digraph))
+        if (!Graphs.is_connected(digraph))
             add_edge!(digraph, src, dst)
             add_edge!(final_graph, src, dst, w)
         end
