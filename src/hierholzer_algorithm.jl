@@ -1,19 +1,20 @@
 function hierholzer_algorithm(g)
+    graph_copy = copy(g)
     curr_path = Any[]
     circuit = Any[]
     actual_vertex = 1
-    while (length(collect(edges(g)))!=0)
-        out_n = outneighbors(g,actual_vertex)
+    while (length(collect(edges(graph_copy)))!=0)
+        out_n = outneighbors(graph_copy,actual_vertex)
         b = length(out_n)
         if (b != 0)
             dst_vertex = out_n[1]
             if (!isempty(curr_path) && curr_path[end] != actual_vertex)
-                rem_edge!(g,actual_vertex,dst_vertex)
+                rem_edge!(graph_copy,actual_vertex,dst_vertex)
                 push!(curr_path, actual_vertex)
             elseif (!isempty(curr_path) && curr_path[end] == actual_vertex)
-                rem_edge!(g,actual_vertex,dst_vertex)
+                rem_edge!(graph_copy,actual_vertex,dst_vertex)
             elseif (isempty(curr_path))
-                rem_edge!(g,actual_vertex,dst_vertex)
+                rem_edge!(graph_copy,actual_vertex,dst_vertex)
                 push!(curr_path, actual_vertex)
             end
             actual_vertex = dst_vertex
