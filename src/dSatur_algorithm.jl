@@ -1,3 +1,4 @@
+using Graphs
 function dSatur_algorithm(g)
     colors_vertex = zeros(nv(g))
     vertices_a = collect(vertices(g))
@@ -15,7 +16,7 @@ function dSatur_algorithm(g)
 end
 
 function color_vertex(g,v,colored_vertex)
-    neighbors_v = neighbors(g,v)
+    neighbors_v = outneighbors(g,v)
     color = 1
     for i in 1:length(neighbors_v)
         #Comprobamos si alguno de los vecinos está coloreado con el mismo color que queremos colorear nosotros el vértice actual
@@ -31,7 +32,7 @@ end
 
 function saturation_degree(g,colors_vertex,v)
     colors=Int64[]
-    neighbors_v = neighbors(g,v)
+    neighbors_v = outneighbors(g,v)
     neighbors_v = findall(x_c->colors_vertex[x_c]!=0,neighbors_v)
     for i in 1:length(neighbors_v)
         if (colors_vertex[neighbors_v[i]] != 0)
