@@ -10,6 +10,7 @@ SimpleGraphs = "55797a34-41de-5266-9ec1-32ac4eb504d3"
 SimpleWeightedGraphs = "47aef6b3-ad0c-573a-a1e2-d07658019622"
 
 [compat]
+BenchmarkTools = "1"
 julia = "1"
 
 [extras]
