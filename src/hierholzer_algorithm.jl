@@ -1,8 +1,9 @@
 function hierholzer_algorithm(g)
-    graph_copy = copy(g)
+    graph_copy = g
     curr_path = Any[]
     circuit = Any[]
     actual_vertex = 1
+
     while (length(collect(edges(graph_copy)))!=0)
         out_n = outneighbors(graph_copy,actual_vertex)
         b = length(out_n)
@@ -32,5 +33,9 @@ function hierholzer_algorithm(g)
     reverse!(curr_path)
     append!(circuit,curr_path)
     reverse!(circuit)
-    return circuit
+    if (circuit[1] != circuit[end])
+        return "El grafo no es euleriano"
+    else
+        return circuit
+    end
 end

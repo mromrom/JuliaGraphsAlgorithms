@@ -1,5 +1,8 @@
 function topological_sort_by_kahn(g)
-    graph_copy = copy(g)
+    if (!is_bipartite(g))
+        return "El grafo no es bipartito, por tanto, no puede ser acíclico."
+    end
+    graph_copy = g
     vertices_graph = collect(vertices(graph_copy))
     edges_graph = collect(edges(graph_copy))
     vertices_with_zero_in_degree = findall(x->indegree(graph_copy,x)==0,vertices_graph)

@@ -15,9 +15,9 @@ GRAPHS = Dict{String,Graph}(
 )
 
 WGRAPHS = Dict{String,SimpleWeightedDiGraph}(
+    "weighted20" => SimpleWeightedDiGraph(rand(20,20)),
     "weighted50" => SimpleWeightedDiGraph(rand(50,50)),
-    "weighted80" => SimpleWeightedDiGraph(rand(80,80)),
-    "weighted100" => SimpleWeightedDiGraph(rand(100,100))
+    "weighted80" => SimpleWeightedDiGraph(rand(80,80))
 )
 
 suite = BenchmarkGroup()
